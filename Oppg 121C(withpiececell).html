@@ -13,6 +13,8 @@
             gap: 5px;
         }
 
+        #gamePiece {}
+
         .cell {
             width: 100%;
             height: 100%;
@@ -74,28 +76,90 @@
         <div class=""></div>
 
         <div class="cell start">Start</div>
-        <div class="cell cell-1">1</div>        
+        <div class="cell cell-1">1</div>
         <div class=""></div>
         <div class="cell cell-3">15</div>
         <div class="cell finish">Mål</div> -->
     </div>
 
     <script>
-        function addCell3() {
-            document.getElementById('board').innerHTML +=
-                `<div class="cell cell-3">6</div>`;
+
+        let pieceCellIndex;
+        pieceCellIndex = ⬤
+        document.body.innerHTML = pieceCellIndex + 1;
+
+        function showBoard();
+
+        function showBoard() {
+            addCell3(6);
+            addCell1(7);
+            addCell2(8);
+            addCell3(9);
+            addCell1(10);
+
+            addCell2(2);
+            addEmptyCell();
+            addEmptyCell();
+            addEmptyCell();
+            addCell2(11);
+
+            addCell1(4);
+            addCell3(3);
+            addEmptyCell();
+            addCell1(13);
+            addCell3(12);
+
+            addEmptyCell();
+            addCell2(2);
+            addEmptyCell();
+            addCell2(14);
+            addEmptyCell();
+
+            addCellStart("Start");
+            addCell1(1);
+            addEmptyCell();
+            addCell3(15);
+            addCellFinish("Mål");
+
+
+
         }
 
-        function addCell1() {
+        function addCell1(number) {
             document.getElementById('board').innerHTML +=
-                `<div class="cell cell-1">6</div>`;
+                `<div class="cell cell-1" > ${number}</div>`;
+        }
+        function addCell2(number) {
+            document.getElementById('board').innerHTML +=
+                `<div class="cell cell-2" > ${number}</div>`;
+        }
+        function addCell3(number) {
+            document.getElementById('board').innerHTML +=
+                `<div class="cell cell-3" > ${number}</div>`;
         }
 
-        function showBoard(){
-            
+        function addEmptyCell() {
+            document.getElementById('board').innerHTML +=
+                `<div class="cell"></div>`;
         }
+
+        function addCellFinish(text) {
+            document.getElementById('board').innerHTML +=
+                `<div class="cell finish">${text}</div>`;
+        }
+
+        function addCellStart(text) {
+            document.getElementById('board').innerHTML +=
+                `<div class="class start">${text}</div>`;
+        }
+
+
+
+
 
     </script>
+
+
 </body>
 
 </html>
